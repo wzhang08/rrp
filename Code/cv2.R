@@ -1,9 +1,16 @@
 source('~/Desktop/Kaggle/RestaurantRevenuePrediction/Code/PrepareData.R')
 library(gbm)
-
+set.seed(0)
 # LOOCV
 n_pca <- seq(from = 3, to = 10, by = 1)
-n_shrink <- c(0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05)
+#n_shrink <- c(0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05)
+# machine 1
+n_shrink <- c(0.00001, 0.00005, 0.0001)
+# machine 2
+#n_shrink <- c(0.0005, 0.001, 0.005)
+# machine 3
+#n_shrink <- c(0.01, 0.05)
+
 n_depth <- seq(from = 1, to = 5, by = 1)
 n_modify <- c('a', 'b') # how to modify prediction
 n_dist <- c('gaussian', 'laplace', 'tdist')
